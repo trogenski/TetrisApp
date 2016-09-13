@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="50dp"
+    android:paddingTop="50dp"
+    tools:context="tr87127.bloomu.edu.tetris.TetrisActivity"
+    android:baselineAligned="false">
+
+    <!--Main game view-->
+    <FrameLayout
+        android:id="@+id/game_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@color/gray"/>
+
+    <!--Linear used to contain all of the extra stuff to the right of the main view-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <!--Next piece view-->
+        <FrameLayout
+            android:id="@+id/next_piece"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/nextPiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:text="@string/next_piece"
+                android:textSize="30sp" />
+        </FrameLayout>
+
+        <!--Framelayout that contains the scores, lines, and levels-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:text="@string/score"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/score_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="70dp"
+                android:text="@string/score_total"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left|center_vertical"
+                android:text="@string/lines"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:paddingRight="10dp"
+
+                android:text="@string/level"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/lines_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="70dp"
+                android:text="@string/lines_count"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/level_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="70dp"
+                android:text="@string/level_count"
+                android:textSize="25sp" />
+
+            <!--Pause button-->
+            <Button
+                android:id="@+id/pause_button"
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="70dp"
+                android:onClick="pauseGame"
+                android:text="@string/pause" />
+
+            <!--Accelerometer button-->
+            <Button
+                android:id="@+id/accelerometer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:onClick="toggleAccelerometer"
+                android:text="@string/accelerometer" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
